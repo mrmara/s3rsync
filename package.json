@@ -1,6 +1,6 @@
 {
   "name": "@profmancusoa/s3rsync",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A simple yet useful rsync alike tool for S3",
   "main": "bin/index.js",
   "type": "module",
@@ -25,7 +25,11 @@
     "aws-sync-cli",
     "aws-s3-sync"
   ],
-  "author": "Antonio \"profmancusoa\" Mancuso <profmancusoa@gmail.com> (https://github.com/profmancusoa)",
+  "author": {
+    "name": "Antonio \"profmancusoa\" Mancuso",
+    "email": "profmancusoa@gmail.com",
+    "url": "https://github.com/profmancusoa"
+  },
   "contributors": [
     {
       "name": "Andrea Canale <vivanco11.ac@gmail.com> (https://github.com/Andrea-Canale)"

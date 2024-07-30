@@ -6,10 +6,21 @@ import {
   PutObjectCommand,
   DeleteObjectCommand,
 } from "@aws-sdk/client-s3";
+import { NodeHttpHandler } from "@smithy/node-http-handler";
+import https from "https";    
 import { file2chunkDir, readFile } from "./file.js";
 import { log } from "./helper.js";
 
-const client = new S3Client();
+// const client = new S3Client();
+
+const client = new S3Client({
+  requestHandler: new NodeHttpHandler({
+    socketAcquisitionWarningTimeout: 5000,
+    httpsAgent: new https.Agent({
+      maxSockets: 100
+    })
+  })
+});
 
 export const bucketExists = async (bucket) => {
   try {

@@ -60,6 +60,12 @@ export const writeManifestChunks = async (bucket, manifest) => {
     });
 }
 
+// export const writeManifestChunks = async (bucket, manifest) => {
+//     for(const chunk of manifest){
+//         await writeObject(bucket, chunk.chunk);
+//     }
+// }
+
 export const deleteManifestChunks = async (bucket, manifest) => {
     manifest.forEach(async chunk => {
         await deleteObject(bucket, chunk.chunk);
